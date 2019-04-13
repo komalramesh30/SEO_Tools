@@ -1,0 +1,27 @@
+import requests
+from bs4 import BeautifulSoup
+
+def SEO_Tool():
+    search_file=input("\nEnter the word to search for in the website(case-sensitive):\n")
+    cnt=web_file.count(search_file)
+    print("\nNumber of occurances of \"",search_file,"\" are: ",cnt)
+    print("\nDo you want to search for another word?")
+    print("\n YES: Press 1\n NO: Press any other number")
+    option=int(input())
+    if option==1:
+      SEO_Tool()
+
+def choices():
+  print("\nConfirm website name?")
+  print("\n YES: Press 1\n NO: Press any other number")
+  choice=int(input())
+  if(choice==1):
+    return
+  elif(choice!=1):
+    website_name=input("\nRe-Enter website name: ")
+    return
+  
+website_name=input("Enter the website: ")
+choices()
+web_file=requests.get(website_name).text
+SEO_Tool()
